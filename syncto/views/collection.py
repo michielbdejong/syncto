@@ -22,7 +22,7 @@ def collection_get(request):
 
     params = {}
     if '_since' in request.GET:
-        params['newer'] = request.GET['_since']
+        params['newer'] = float(request.GET['_since'])/1000
 
     if '_limit' in request.GET:
         params['limit'] = request.GET['_limit']
